@@ -2,6 +2,17 @@
 <html>
 <head>
     <title>JoyPlus Client</title>
+    <style>
+        #control td {
+            height: 80px;
+            width: 80px;
+        }
+        #control button {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+    </style>
 </head>
 <body>
 <h1>JoyPlus Client</h1>
@@ -9,6 +20,26 @@
 <p>Game ID: <input id="gameId" value=""></p>
 <p><button id="connect">Connect</button></p>
 <p>Status: <span id="status">Ready</span> </p>
+
+
+<table id="control">
+    <tr>
+        <td></td>
+        <td><button id="button-up">Up</button></td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><button id="button-left">Left</button></td>
+        <td><button id="button-click">Biu!</button></td>
+        <td><button id="button-right">Right</button></td>
+    </tr>
+    <tr>
+        <td></td>
+        <td><button id="button-down">Down</button></td>
+        <td></td>
+    </tr>
+</table>
+
 <script src="js/jquery-1.11.0.min.js"></script>
 <script src="js/core.js"></script>
 </body>

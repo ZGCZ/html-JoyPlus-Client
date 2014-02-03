@@ -12,6 +12,71 @@ $(document).ready ->
     ws.onclose = onWSClose.bind(that)
     ws.onerror = onWSError.bind(that)
 
+  $("#button-click").on("mousedown", ->
+    sendMessage(
+      event: 'keydown'
+      key: 'click'
+    )
+  )
+  $("#button-click").on("mouseup", ->
+    sendMessage(
+      event: 'keyup'
+      key: 'click'
+    )
+  )
+
+  $("#button-right").on("mousedown", ->
+    sendMessage(
+      event: 'keydown'
+      key: 'right'
+    )
+  )
+  $("#button-right").on("mouseup", ->
+    sendMessage(
+      event: 'keyup'
+      key: 'right'
+    )
+  )
+
+  $("#button-up").on("mousedown", ->
+    sendMessage(
+      event: 'keydown'
+      key: 'up'
+    )
+  )
+  $("#button-down").on("mouseup", ->
+    sendMessage(
+      event: 'keyup'
+      key: 'down'
+    )
+  )
+
+  $("#button-down").on("mousedown", ->
+    sendMessage(
+      event: 'keydown'
+      key: 'down'
+    )
+  )
+  $("#button-up").on("mouseup", ->
+    sendMessage(
+      event: 'keyup'
+      key: 'up'
+    )
+  )
+
+  $("#button-left").on("mousedown", ->
+    sendMessage(
+      event: 'keydown'
+      key: 'left'
+    )
+  )
+  $("#button-left").on("mouseup", ->
+    sendMessage(
+      event: 'keyup'
+      key: 'left'
+    )
+  )
+
 onMessage = (message) ->
   console.log message
 

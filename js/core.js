@@ -9,7 +9,7 @@
   $(document).ready(function() {
     var that;
     that = this;
-    return $("#connect").click(function() {
+    $("#connect").click(function() {
       console.log("trying to connect");
       ws = new WebSocket("ws://" + $("#address").val());
       gameId = parseInt($("#gameId").val());
@@ -17,6 +17,66 @@
       ws.onopen = onWSOpen.bind(that);
       ws.onclose = onWSClose.bind(that);
       return ws.onerror = onWSError.bind(that);
+    });
+    $("#button-click").on("mousedown", function() {
+      return sendMessage({
+        event: 'keydown',
+        key: 'click'
+      });
+    });
+    $("#button-click").on("mouseup", function() {
+      return sendMessage({
+        event: 'keyup',
+        key: 'click'
+      });
+    });
+    $("#button-right").on("mousedown", function() {
+      return sendMessage({
+        event: 'keydown',
+        key: 'right'
+      });
+    });
+    $("#button-right").on("mouseup", function() {
+      return sendMessage({
+        event: 'keyup',
+        key: 'right'
+      });
+    });
+    $("#button-up").on("mousedown", function() {
+      return sendMessage({
+        event: 'keydown',
+        key: 'up'
+      });
+    });
+    $("#button-down").on("mouseup", function() {
+      return sendMessage({
+        event: 'keyup',
+        key: 'down'
+      });
+    });
+    $("#button-down").on("mousedown", function() {
+      return sendMessage({
+        event: 'keydown',
+        key: 'down'
+      });
+    });
+    $("#button-up").on("mouseup", function() {
+      return sendMessage({
+        event: 'keyup',
+        key: 'up'
+      });
+    });
+    $("#button-left").on("mousedown", function() {
+      return sendMessage({
+        event: 'keydown',
+        key: 'left'
+      });
+    });
+    return $("#button-left").on("mouseup", function() {
+      return sendMessage({
+        event: 'keyup',
+        key: 'left'
+      });
     });
   });
 
