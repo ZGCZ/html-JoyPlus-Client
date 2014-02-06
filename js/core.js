@@ -81,7 +81,17 @@
   });
 
   onMessage = function(message) {
-    return console.log(message);
+    var layout, msgObject;
+    console.log(message);
+    msgObject = JSON.parse(message["data"]);
+    if (!"event" in msgObject) {
+      console.log("strange message");
+      return;
+    }
+    if (msgObject["event"] === "layout") {
+      layout = msgObject["layout"];
+      return console.log("set layout " + layout);
+    }
   };
 
   onWSOpen = function() {

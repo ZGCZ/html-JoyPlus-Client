@@ -79,6 +79,13 @@ $(document).ready ->
 
 onMessage = (message) ->
   console.log message
+  msgObject = JSON.parse(message["data"])
+  if not "event" of msgObject
+    console.log "strange message"
+    return
+  if msgObject["event"] == "layout"
+    layout = msgObject["layout"]
+    console.log "set layout " + layout
 
 onWSOpen = () ->
   console.log "ws open"
